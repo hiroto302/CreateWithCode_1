@@ -5,8 +5,6 @@ using TMPro;
 
 public class PlayerController_Upgrade : MonoBehaviour
 {
-    [SerializeField] float _speed; // M/H １時間あたり進む[m]
- 
     [SerializeField] float _horsePower  = 20000, _turnSpeed = 25;
 
     [SerializeField] float _horizontalInput, _verticalInput;
@@ -14,6 +12,9 @@ public class PlayerController_Upgrade : MonoBehaviour
     [SerializeField] GameObject _centerOfMass;
 
     [SerializeField] TextMeshProUGUI _speedometerText;
+    [SerializeField] float _speed; // M/H １時間あたり進む[m]
+    [SerializeField] TextMeshProUGUI _rpmText;
+    [SerializeField] float _rpm;  // MPH : 速度 Miles per hour（マイル毎時）の略。mi/hとも表記される
 
     void Start()
     {
@@ -37,7 +38,9 @@ public class PlayerController_Upgrade : MonoBehaviour
         // get the correct speed by using rigidbody.velocity.magnitude. It returns the speed in M/S.
         // To get the speed in KM/H multiply the magnitude by 3.6f, and to get it in M/H multiply the magnitude by 2.237f.
         _speed = Mathf.RoundToInt(_playerRb.velocity.magnitude * 2.237f); // For kph, change 2.237 to 3.6
-
         _speedometerText.SetText("Speed: " + _speed.ToString() + "mph");
+
+        _rpm = Mathf.Round((_speed % 30) * 40);
+        _rpmText.SetText("RPM: " + _rpm.ToString());
     }
 }
