@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 1886853276449841223}
   - component: {fileID: 4023057211224234218}
   - component: {fileID: 4023057211224234213}
+  - component: {fileID: 5701331736585517308}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -653,3 +654,23 @@ MonoBehaviour:
   _turnSpeed: 25
   _horizontalInput: 0
   _verticalInput: 0
+  _centerOfMass: {fileID: 0}
+  _speedometerText: {fileID: 0}
+  _speed: 0
+  _rpmText: {fileID: 0}
+  _rpm: 0
+  _allWheels: []
+  _wheelsOnGround: 0
+--- !u!114 &5701331736585517308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023057211224403761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eafa525cc9844828d292fa67b34a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _subCamera: {fileID: 0}
